@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.QuickContactBadge;
 import android.widget.TextView;
 
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ConstraintLayout cc = findViewById(R.id.main);
 
+        LinearLayout.LayoutParams ff = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        cc.addView(new viewtest(this),ff);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
